@@ -34,7 +34,8 @@ jobs:
       - name: Start Sail
         run: ./vendor/bin/sail up -d
 
-      - name: Run migrations and tests
-        run: |
-          ./vendor/bin/sail artisan migrate:fresh --env=testing
-          ./vendor/bin/sail test
+      - name: Generate APP_KEY
+        run: ./vendor/bin/sail artisan key:generate --env=testing
+
+      - name: Run tests
+        run: ./vendor/bin/sail artisan test
