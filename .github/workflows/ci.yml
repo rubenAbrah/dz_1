@@ -21,7 +21,7 @@ jobs:
       
       - name: Run migrations
         run: |
-          ./vendor/bin/sail artisan migrate:fresh --env=testing
+          ./vendor/bin/sail artisan migrate:fresh
 
       - name: Run tests
         run: ./vendor/bin/sail artisan test
